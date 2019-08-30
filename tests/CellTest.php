@@ -1,13 +1,12 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-use App\User;
+use App\Cell;
 
 class CellTest extends TestCase
 {
-    public function testName(){
-        $user = new User;
-        $user->setName("Edward")  ;
-        $this->assertEquals($user->getName(),"Edward")  ;
+    public function testState(){
+        $cell = new Cell("Alive");          
+        $this->assertEquals($cell->getState(),"Alive");
     }
 }
