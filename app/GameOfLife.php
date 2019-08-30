@@ -15,7 +15,8 @@ class GameOfLife {
         $cellAlive = new Cell("Alive");         
         if($currentState == $cellAlive && ($liveNeighbors < 2) )
             return $cellDead;
-            
+        if($currentState == $cellAlive && ($liveNeighbors > 3) )
+            return $cellDead; 
         return $currentState;
     }
 }
