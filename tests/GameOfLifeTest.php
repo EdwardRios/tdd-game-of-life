@@ -35,4 +35,13 @@ class GameOfLifeTest extends TestCase
         
         $this->assertEquals($expected, $getState) ;
     }
+    public function testDeadCellWithThreeNeighborsLives(){
+        $gameOfLife = new GameOfLife();
+        $currentState = new Cell("Dead");        
+        $liveNeighbor = 3 ; 
+        $getState = $gameOfLife->newState($currentState , $liveNeighbor);
+        $expected = new Cell("Alive");        
+        $this->assertEquals($expected, $getState) ;
+    }
+    
 }
